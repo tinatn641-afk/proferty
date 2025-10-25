@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tina Serenity Home - Karawang</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Tina Serenity Home</div>
+    <nav>
+      <a href="#home">Beranda</a>
+      <a href="#tipe">Tipe Rumah</a>
+      <a href="#galeri">Galeri</a>
+      <a href="#denah">Denah</a>
+      <a href="#kontak">Hubungi Kami</a>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="hero">
+    <div class="overlay"></div>
+    <div class="hero-text">
+      <h1>Hunian Modern dan Nyaman di Karawang</h1>
+      <p>Tina Serenity Home menghadirkan kehidupan tenang, desain elegan, dan lokasi strategis untuk keluarga bahagia Anda.</p>
+      <button onclick="scrollToContact()">Hubungi Kami</button>
+    </div>
+  </section>
+
+  <!-- TIPE RUMAH -->
+  <section id="tipe" class="tipe">
+    <h2>Tipe Rumah 72/90</h2>
+    <div class="tipe-info">
+      <div class="tipe-detail">
+        <p><strong>Lokasi:</strong> Karawang</p>
+        <p><strong>Luas Bangunan:</strong> 72 m²</p>
+        <p><strong>Luas Tanah:</strong> 90 m²</p>
+        <p><strong>Harga:</strong> Rp 2.000.000.000</p>
+        <p><strong>Deskripsi:</strong> Rumah dua lantai dengan 3 kamar tidur, 2 kamar mandi, ruang Tamu, dapur modern, ruang main anak, ruang makan, tempat menjemur, ruang karaoke, dan kolam renang yang.</p>
+      </div>
+      <div class="tipe-img">
+        <img src="rumah-type72.jpg" alt="Rumah depan">
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERI -->
+  <section id="galeri" class="galeri">
+    <h2>Galeri Rumah</h2>
+    <div class="gallery-container">
+      <img src="rumah-depan.jpg" alt="Tampak Depan">
+      <img src="ruang_tamu.png" alt="Ruang Tamu">
+      <img src="interior.png" alt="Interior">
+      <img src="kamar.png" alt="Kamar Tidur">
+      <img src="kamar_mandi.png" alt="Kamar Mandi">
+      <img src="kolam.png" alt="Kolam Renang">
+      <img src="dapur.png" alt="Dapur">
+      <img src="ruang_main.png" alt="Ruang Main">
+      <img src="cucijemur.png" alt="Ruang Cuci/jemur">
+      <img src="ruangkaraoke.png" alt="Ruang Karaoke">
+      <img src="ruangmakan.png" alt="Ruang Makan">
+      <img src="tangga.png" alt="Tangga">
+
+    </div>
+  </section>
+
+  <!-- DENAH -->
+  <section id="denah" class="denah">
+    <h2>Denah Rumah Tipe 72/90</h2>
+    <div class="denah-wrapper">
+      <img src="denah1.png" alt="Denah Lantai 1">
+      <img src="denah2.png" alt="Denah Lantai 2">
+    </div>
+  </section>
+
+  <!-- KONTAK -->
+  <section id="kontak" class="kontak">
+    <h2>Hubungi Kami</h2>
+    <!-- Nomor WhatsApp -->
+<div class="kontak-info">
+  <p>Atau hubungi langsung melalui WhatsApp:</p>
+  <a href="https://wa.me/6285780440741" target="_blank" class="whatsapp-btn">
+    💬 Chat via WhatsApp
+  </a>
+</div>
+    <p>Ingin mengetahui lebih lanjut tentang Tina Serenity Home? Kirimkan pesan Anda di bawah ini:</p>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Nama Anda" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <textarea id="message" placeholder="Pesan Anda" rows="4" required></textarea>
+      <button type="submit">Kirim Pesan</button>
+    </form>
+  </section>
+<!-- Peta Lokasi -->
+<div class="maps">
+  <h3>Lokasi Kami</h3>
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.1564986095544!2d107.31493297499412!3d-6.240673161124469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6983b2b8000001%3A0xb5b97f2bfa89974!2sTina%20Serenity%20Home!5e0!3m2!1sid!2sid!4v1735082700000!5m2!1sid!2sid" 
+    width="100%" 
+    height="320" 
+    style="border:0; border-radius: 10px; margin-top: 15px;" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+
+  <footer>
+    <p>&copy; 2025 Tina Serenity Home | Karawang</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

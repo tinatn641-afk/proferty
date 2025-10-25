@@ -1,0 +1,198 @@
+:root {
+  --cream: #f7f1e1;
+  --brown: #8b5e3c;
+  --dark-brown: #5a3e2b;
+  --text: #3a2b20;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--cream);
+  color: var(--text);
+  scroll-behavior: smooth;
+}
+
+header {
+  background-color: var(--brown);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--cream);
+}
+
+/* Hero section */
+.hero {
+  background: url('https://cdn.pixabay.com/photo/2016/11/29/09/08/architecture-1867187_1280.jpg') center/cover no-repeat;
+  color: white;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-text {
+  z-index: 1;
+  background: rgba(139, 94, 60, 0.7);
+  padding: 30px;
+  border-radius: 10px;
+  animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+button {
+  background-color: var(--brown);
+  border: none;
+  padding: 10px 25px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: var(--dark-brown);
+}
+
+section {
+  padding: 60px 10%;
+}
+
+.tipe-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+}
+
+.tipe-detail {
+  flex: 1;
+  font-size: 1.1rem;
+}
+
+.tipe-img img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(90, 62, 43, 0.3);
+}
+
+/* Galeri */
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.gallery-container img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-container img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(90, 62, 43, 0.4);
+}
+
+/* Denah */
+.denah-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.denah-wrapper img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(90, 62, 43, 0.3);
+}
+
+/* Kontak */
+.kontak form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: auto;
+  gap: 10px;
+}
+
+.kontak input, .kontak textarea {
+  padding: 10px;
+  border: 1px solid var(--brown);
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+footer {
+  background-color: var(--dark-brown);
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+.kontak-info {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.whatsapp-btn {
+  display: inline-block;
+  background-color: #25D366;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.whatsapp-btn:hover {
+  background-color: #1ebe5d;
+}
+
+.maps {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.maps h3 {
+  margin-bottom: 10px;
+  color: #5a3e2b;
+}
