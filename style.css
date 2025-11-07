@@ -1,20 +1,24 @@
 :root {
-  --cream: #f7f1e1;
-  --brown: #8b5e3c;
-  --dark-brown: #5a3e2b;
-  --text: #3a2b20;
+  --cream: #fdf9f3;
+  --brown: #1f0f01; /* Mahogany utama */
+  --dark-brown: #1f0f01; /* Mahogany gelap */
+  --text: #1f0f01;
+  --gold: #1f0f01; /* Sedikit lebih hangat */
+  --glow: 0 0 10px rgba(116, 75, 15, 0.8), 0 0 20px rgb(41, 27, 1);
 }
+
 
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background-color: var(--cream);
+  background: radial-gradient(circle at top, #fff6e8, #f7e9d4);
   color: var(--text);
   scroll-behavior: smooth;
 }
 
+/* Header */
 header {
-  background-color: var(--brown);
+  background: linear-gradient(90deg, #5a3e2b, #8b5e3c, #5a3e2b);
   color: white;
   display: flex;
   justify-content: space-between;
@@ -23,22 +27,43 @@ header {
   position: sticky;
   top: 0;
   z-index: 10;
+  box-shadow: 0 0 20px rgba(36, 18, 4, 0.8);
 }
 
 .logo {
   font-weight: bold;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px #261902;
 }
 
 nav a {
   color: white;
   text-decoration: none;
   margin-left: 20px;
-  transition: color 0.3s;
+  transition: 0.3s;
+  font-weight: 500;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--gold);
+  transition: 0.3s;
+  box-shadow: var(--glow);
 }
 
 nav a:hover {
-  color: var(--cream);
+  color: var(--gold);
+}
+
+nav a:hover::after {
+  width: 100%;
 }
 
 /* Hero section */
@@ -51,21 +76,32 @@ nav a:hover {
   justify-content: center;
   text-align: center;
   position: relative;
+  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.7);
 }
 
 .overlay {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .hero-text {
   z-index: 1;
-  background: rgba(139, 94, 60, 0.7);
-  padding: 30px;
-  border-radius: 10px;
+  background: rgba(49, 23, 3, 0.75);
+  padding: 35px;
+  border-radius: 15px;
+  box-shadow: var(--glow);
   animation: fadeIn 1.5s ease;
+  backdrop-filter: blur(4px);
+}
+
+.hero-text h1 {
+  text-shadow: 0 0 10px #241904, 0 0 20px #ffb347;
+}
+
+.hero-text p {
+  color: #fdf5e6;
 }
 
 @keyframes fadeIn {
@@ -73,26 +109,31 @@ nav a:hover {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* Tombol umum */
 button {
-  background-color: var(--brown);
+  background: linear-gradient(90deg, #271304, #2e1a03);
   border: none;
   padding: 10px 25px;
-  border-radius: 5px;
+  border-radius: 8px;
   color: white;
   font-weight: bold;
   cursor: pointer;
   margin-top: 10px;
-  transition: 0.3s;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 207, 117, 0.6);
 }
 
 button:hover {
-  background-color: var(--dark-brown);
+  background: linear-gradient(90deg, #d69f61, #1e0e02);
+  box-shadow: 0 0 20px rgba(255, 207, 117, 0.9);
+  transform: scale(1.05);
 }
 
 section {
   padding: 60px 10%;
 }
 
+/* Tipe Rumah */
 .tipe-info {
   display: flex;
   flex-wrap: wrap;
@@ -103,13 +144,24 @@ section {
 .tipe-detail {
   flex: 1;
   font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: var(--glow);
+  backdrop-filter: blur(4px);
 }
 
 .tipe-img img {
   width: 100%;
   max-width: 450px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(90, 62, 43, 0.3);
+  box-shadow: 0 0 15px rgba(90, 62, 43, 0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tipe-img img:hover {
+  transform: scale(1.03);
+  box-shadow: var(--glow);
 }
 
 /* Galeri */
@@ -122,12 +174,15 @@ section {
 .gallery-container img {
   width: 100%;
   border-radius: 10px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: all 0.3s;
+  opacity: 0.9;
+  box-shadow: 0 0 10px rgba(139, 94, 60, 0.4);
 }
 
 .gallery-container img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(90, 62, 43, 0.4);
+  transform: scale(1.07);
+  box-shadow: 0 0 20px rgba(255, 207, 117, 0.8);
+  opacity: 1;
 }
 
 /* Denah */
@@ -142,16 +197,24 @@ section {
   width: 100%;
   max-width: 400px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(90, 62, 43, 0.3);
+  box-shadow: var(--glow);
 }
 
 /* Kontak */
+.kontak {
+  text-align: center;
+}
+
 .kontak form {
   display: flex;
   flex-direction: column;
   max-width: 500px;
-  margin: auto;
+  margin: 20px auto;
   gap: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: var(--glow);
 }
 
 .kontak input, .kontak textarea {
@@ -161,32 +224,31 @@ section {
   font-size: 1rem;
 }
 
-footer {
-  background-color: var(--dark-brown);
-  color: white;
-  text-align: center;
-  padding: 15px;
-}
-.kontak-info {
-  margin-top: 20px;
-  text-align: center;
+.kontak input:focus, .kontak textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: var(--glow);
 }
 
+/* Tombol WhatsApp */
 .whatsapp-btn {
   display: inline-block;
-  background-color: #25D366;
+  background: linear-gradient(90deg, #25D366, #6CF09A);
   color: white;
   padding: 10px 20px;
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
   transition: 0.3s;
+  box-shadow: 0 0 15px rgba(37, 211, 102, 0.7);
 }
 
 .whatsapp-btn:hover {
-  background-color: #1ebe5d;
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(37, 211, 102, 1);
 }
 
+/* Maps */
 .maps {
   margin-top: 30px;
   text-align: center;
@@ -194,5 +256,15 @@ footer {
 
 .maps h3 {
   margin-bottom: 10px;
-  color: #5a3e2b;
+  color: var(--dark-brown);
+  text-shadow: 0 0 8px var(--gold);
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(90deg, #3e2615, #5a3e2b, #3e2615);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  box-shadow: 0 -5px 20px rgba(90, 62, 43, 0.5);
 }
